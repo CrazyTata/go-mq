@@ -1,0 +1,17 @@
+services:
+  go-mq:
+    build: .
+    ports:
+      - "8873:8873"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./logs/go-mq:/var/log/go-mq
+      - ./etc:/app/etc
+    networks:
+      - chatgpt-wechat_network
+networks:
+  chatgpt-wechat_network:
+    external: true
+
+volumes:

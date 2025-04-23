@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS health_records (
+    `id` INT UNSIGNED AUTO_INCREMENT,
+    `patient_id` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '患者ID',
+    `patient_name` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '患者姓名',
+    `date` DATE COMMENT '日期',
+    `record_type` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '记录类型',
+    `diagnosis` TEXT COMMENT '诊断',
+    `treatment` TEXT COMMENT '治疗',
+    `notes` TEXT COMMENT '备注',
+    `vital_signs` TEXT COMMENT '生命体征',
+    `medications` TEXT COMMENT '药物',
+    `attachments` TEXT COMMENT '附件',
+    `user_id` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '用户ID',
+    `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '是否删除',
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    PRIMARY KEY (`id`),
+    INDEX `idx_patient_id` (`patient_id`),
+    INDEX `idx_user_id` (`user_id`),
+    INDEX `idx_date` (`date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='健康记录表';

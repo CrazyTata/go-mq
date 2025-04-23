@@ -1,0 +1,58 @@
+Name: go-mq
+Host: 0.0.0.0
+Port: 8873
+Domain: http://localhost:8873`
+Env: dev
+PaymentHost: http://localhost:8882
+Log:
+  stat: false
+  Path: "/var/log/go-mq/"
+  Mode: "console"       # default=console,options=[console,file,volume]
+  Level: "debug"        #    default=info,options=[debug,info,error,severe]
+  KeepDays: 5
+
+
+DB:
+  DataSource: root:123456@tcp(localhost:43306)/go-mq?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai # 数据库连接地址 自建最好修改下密码
+
+# jwt 配置
+FrontendAuth:
+  AccessSecret: "13safhasfuawefc0f0"
+  AccessExpire: 25920000
+
+BaseCallbackURL: http://localhost:8873
+
+TokenAnalysis:
+  Url: 
+  Android:
+   Appid: 
+   Version: "2.0"
+   StrictCheck: "0"
+   APPSecret: 
+  Ios:
+   Appid: 
+   Version: "2.0"
+   StrictCheck: "0"
+   APPSecret: 
+
+MSG:
+  SMSTemplate: "【叮当】您的验证码为{code}，该验证码30分钟内有效，请勿泄漏于他人！"
+  Url: "https://api.smsbao.com/sms"
+  ApiKey: 
+  Account: 
+
+
+Qiniu:
+  AccessKey: ""
+  SecretKey: ""
+  Bucket: baixiaomiao
+  Domain: https://miaostatic.pansi.com
+  Region: ZoneHuaDong
+
+Email:
+  Host: smtp.mxhichina.com
+  Port: 465
+  Username: service1@ashgso.com
+  Password: xxxx
+  From: service1@ashgso.com
+  FrontendURL: http://xxx.com 
