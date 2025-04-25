@@ -33,19 +33,6 @@ func main() {
 	// 配置 CORS
 	server.Use(func(next http.HandlerFunc) http.HandlerFunc {
 		return func(w http.ResponseWriter, r *http.Request) {
-			// 允许的前端域名
-			allowOrigins := []string{"http://127.0.0.1:8873", "http://localhost:8873", "http://localhost:3000", c.Domain}
-			origin := r.Header.Get("Origin")
-			for _, allowOrigin := range allowOrigins {
-				if origin == allowOrigin {
-					w.Header().Set("Access-Control-Allow-Origin", origin)
-					break
-				}
-			}
-			w.Header().Set("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS")
-			w.Header().Set("Access-Control-Allow-Headers", "Content-Type,Authorization")
-			w.Header().Set("Access-Control-Allow-Credentials", "true")
-
 			// 处理预检请求
 			if r.Method == "OPTIONS" {
 				w.WriteHeader(http.StatusNoContent)
