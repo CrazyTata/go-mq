@@ -21,38 +21,3 @@ FrontendAuth:
   AccessExpire: 25920000
 
 BaseCallbackURL: http://localhost:8873
-
-TokenAnalysis:
-  Url: 
-  Android:
-   Appid: 
-   Version: "2.0"
-   StrictCheck: "0"
-   APPSecret: 
-  Ios:
-   Appid: 
-   Version: "2.0"
-   StrictCheck: "0"
-   APPSecret: 
-
-MSG:
-  SMSTemplate: "【叮当】您的验证码为{code}，该验证码30分钟内有效，请勿泄漏于他人！"
-  Url: "https://api.smsbao.com/sms"
-  ApiKey: 
-  Account: 
-
-
-Qiniu:
-  AccessKey: ""
-  SecretKey: ""
-  Bucket: baixiaomiao
-  Domain: https://miaostatic.pansi.com
-  Region: ZoneHuaDong
-
-Email:
-  Host: smtp.mxhichina.com
-  Port: 465
-  Username: service1@ashgso.com
-  Password: xxxx
-  From: service1@ashgso.com
-  FrontendURL: http://xxx.com 

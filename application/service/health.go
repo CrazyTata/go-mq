@@ -18,7 +18,7 @@ type HealthService struct {
 	queue queue.QueueManager
 }
 
-// NewHealthAppService 创建健康记录应用服务
+// NewHealthService 创建健康记录应用服务
 func NewHealthService(repo health.HealthRepository, queue queue.QueueManager) *HealthService {
 	return &HealthService{
 		repo:  repo,
@@ -26,7 +26,7 @@ func NewHealthService(repo health.HealthRepository, queue queue.QueueManager) *H
 	}
 }
 
-// Create 创建健康记录
+// Save 创建健康记录
 func (s *HealthService) Save(ctx context.Context, req *dto.HealthRequest) (*dto.CreateHealthResponse, error) {
 	logger := logx.WithContext(ctx)
 	userID, err := util.GetUserIdFromContext(ctx)

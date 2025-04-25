@@ -26,44 +26,6 @@ type Config struct {
 		AccessSecret string `json:",optional,default=13safhasfuawefc0f0"`
 		AccessExpire int64  `json:",optional,default=25920000"`
 	}
-	TokenAnalysis struct {
-		Url     string // 令牌分析URL
-		Android struct {
-			Appid       string // Android应用ID
-			Version     string // 版本号
-			StrictCheck string // 严格检查
-			APPSecret   string // 应用密钥
-		}
-		Ios struct {
-			Appid       string // iOS应用ID
-			Version     string // 版本号
-			StrictCheck string // 严格检查
-			APPSecret   string // 应用密钥
-		}
-	}
-	MSG struct {
-		SMSTemplate string // 短信模板
-		Url         string // 短信URL
-		ApiKey      string // API密钥
-		Account     string // 账号
-	}
-
-	Qiniu struct {
-		AccessKey string
-		SecretKey string
-		Bucket    string
-		Domain    string
-		Region    string
-	}
-
-	Email struct {
-		Host        string
-		Port        int
-		Username    string
-		Password    string
-		From        string
-		FrontendURL string
-	}
 
 	DqConf dq.DqConf
 }
